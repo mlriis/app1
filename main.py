@@ -32,7 +32,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("Otstarve: tootetutvustustekstide personaliseerimine igale kliendile või kliendigruppidele; väljundtekst on kohandatud kliendi a) vanuserühmaga ja b) hobbitegevusega; sisendtekstiks on neutraalses vormis tootekirjeldus. \
-    \n\n Kasutusjuhend: 1) valmista ette tootekirjeldus (sisendtekst). 2) määra tarbijasegemendid lähtuvalt vanuserühma ja hobbide kombinatsioonidest. 3) sisesta ükshaaval tarbijasegmentide lõikes eeltoodud info äpi kasutajaliideses, saada ära. \
+    \n\n Kasutusjuhend: 1) valmista ette tootekirjeldus (sisendtekst). 2) määra tarbijasegemendid lähtuvalt vanuserühma ja sissetulekute kombinatsioonidest. 3) sisesta ükshaaval tarbijasegmentide lõikes eeltoodud info äpi kasutajaliideses, saada ära. \
     4) kopeeri ükshaaval tarbijasegmentide lõikes äpi väljundteksti kõnealuse toote tutvustuslehele.")
 
 with col2:
@@ -70,7 +70,7 @@ if len(content_input.split(" ")) > 700:
 
 def update_text_with_example():
     print ("in updated")
-    st.session_state.content_input = "t shirts, all clolors, cotton, responsible manufacturing"
+    st.session_state.content_input = "jewelry, all colors, silver, responsible manufacturing"
 
 st.button("*See An Example*", type='secondary', help="Click to see an example of the content you will be converting.", on_click=update_text_with_example)
 
@@ -88,3 +88,4 @@ if content_input:
     formatted_content = llm(prompt_with_content)
 
     st.write(formatted_content)
+
